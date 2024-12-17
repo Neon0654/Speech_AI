@@ -37,6 +37,5 @@ grid_search.fit(X_train, y_train)
 # Lấy mô hình tốt nhất
 best_model = grid_search.best_estimator_
 
-# Đánh giá mô hình
-y_pred = best_model.predict(X_test)
-print(classification_report(y_test, y_pred))
+# Lưu mô hình đã huấn luyện
+joblib.dump(best_model, 'speech_recognition_model.pkl')
